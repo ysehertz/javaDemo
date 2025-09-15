@@ -13,6 +13,7 @@
         <module>JavaException</module>
         <module>ThreadPool</module>
         <module>Proxy</module>
+        <module>JavaFile</module>
     </modules>
 
     <properties>
