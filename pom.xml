@@ -12,6 +12,7 @@
         <module>juc</module>
         <module>JavaException</module>
         <module>ThreadPool</module>
+        <module>Proxy</module>
     </modules>
 
     <properties>
