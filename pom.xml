@@ -11,6 +11,7 @@
     <modules>
         <module>juc</module>
         <module>JavaException</module>
+        <module>ThreadPool</module>
     </modules>
 
     <properties>
