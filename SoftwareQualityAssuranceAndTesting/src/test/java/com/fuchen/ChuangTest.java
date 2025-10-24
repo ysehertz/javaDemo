@@ -1,7 +1,7 @@
 package com.fuchen;
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -16,6 +16,23 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  */
 @Slf4j
 public class ChuangTest {
+
+    @BeforeAll
+    public static void setup() {
+        log.info("Starting Chuang tests...");
+    }
+    @AfterAll
+    public static void teardown() {
+        log.info("Chuang tests completed.");
+    }
+    @BeforeEach
+    public void beforeEachTest() {
+        log.info("Starting a new test...");
+    }
+    @AfterEach
+    public void afterEachTest() {
+        log.info("Test completed.");
+    }
     @Test
     public void testGetGrade_Excellent() {
         // 测试优秀等级：single_Max >= 5 或 sum >= 7
@@ -30,7 +47,7 @@ public class ChuangTest {
     public void testGetGrade_Good() {
         // 测试良好等级：single_Max >= 4 或 sum >= 6
         Chuang chuang1 = new Chuang(4.0, 5.0); // single_Max >= 4
-        assertEquals("良", chuang1.getGrade());
+        assertEquals("良好", chuang1.getGrade());
 
         Chuang chuang2 = new Chuang(3.0, 6.0); // sum >= 6
         assertEquals("良好", chuang2.getGrade());
