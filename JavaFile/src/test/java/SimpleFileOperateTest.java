@@ -36,4 +36,24 @@ public class SimpleFileOperateTest {
             throw new RuntimeException(e);
         }
     }
+
+    @Test
+    public void ViewDirectoryTest(){
+        SimpleFileOperate simpleFileOperate = new SimpleFileOperate("D:\\knowledge");
+        try {
+            simpleFileOperate.viewDirectory();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    public void ViewDirectoryToFileTreeTest(){
+        SimpleFileOperate simpleFileOperate = new SimpleFileOperate("D:\\knowledge");
+        try {
+            simpleFileOperate.viewDirectoryToFileTree();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

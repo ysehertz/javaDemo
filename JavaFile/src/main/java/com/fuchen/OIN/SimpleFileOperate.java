@@ -2,10 +2,10 @@ package com.fuchen.OIN;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -41,5 +41,40 @@ public class SimpleFileOperate {
         Map<Integer, String> map = lines.collect(Collectors.toMap(s -> i.incrementAndGet(), s -> s));
         lines.close();
         return map;
+    }
+
+    /**
+     * 遍历文件夹中的所有目录
+     * @throws IOException
+     */
+    public void viewDirectory() throws IOException {
+        Stream<Path> walk = Files.walk(filePath);
+        walk.forEach(path -> {
+            int depth = path.getNameCount();
+            for (int i = 0; i < depth; i++) {
+                System.out.print("---");
+            }
+            System.out.println(path.getFileName());
+        });
+    }
+
+    /**
+     * 遍历文件夹中的所有目录
+     * @throws IOException
+     */
+    public void viewDirectoryToFileTree() throws IOException {
+        Files.walkFileTree(filePath , new SimpleFileVisitor<>(){
+            @Override
+            public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                log.info("找到文件：{}" , file.getFileName());
+                return FileVisitResult.CONTINUE;
+            }
+
+            @Override
+            public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
+                log.info("找到文件夹：{}",dir.getFileName());
+                return FileVisitResult.CONTINUE;
+            }
+        });
     }
 }
