@@ -62,6 +62,10 @@ public class ComplexMixedGenerator implements IProblemGenerator {
         if (checkConstraints(answer, a, b, c, temp)) {
             return new Problem(String.format("%d × %d + %d", a, b, c), answer);
         }
+        System.out.println("模拟第一次提交");
+        System.out.println("模拟第二次提交");
+        System.out.println("模拟第三次提交");
+        System.out.println("模拟第四次提交");
         return null;
     }
 
