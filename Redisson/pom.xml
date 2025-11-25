@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>Other</artifactId>
+    <artifactId>Redisson</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -19,10 +19,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.33</version>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.50.0</version>
         </dependency>
     </dependencies>
-
 </project>

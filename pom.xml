@@ -14,6 +14,10 @@
         <module>ThreadPool</module>
         <module>Proxy</module>
         <module>JavaFile</module>
+        <module>Redisson</module>
+        <module>SoftwareQualityAssuranceAndTesting</module>
+        <module>collection</module>
+        <module>Other</module>
     </modules>
 
     <properties>
