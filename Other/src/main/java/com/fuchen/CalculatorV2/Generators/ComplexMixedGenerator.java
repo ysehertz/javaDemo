@@ -66,6 +66,7 @@ public class ComplexMixedGenerator implements IProblemGenerator {
         System.out.println("模拟第二次提交");
         System.out.println("模拟第三次提交");
         System.out.println("模拟第四次提交");
+        System.out.println("模拟第五次提交");
         return null;
     }
 
